@@ -116,3 +116,31 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+
+
+
+//for loop to recieved password length and will end once valid value recieved
+for (let i = false; i === false;) {
+var passwordLength = parseInt(prompt(`please specify length of password note: must be minimum of 8 but no more than 128 characters.`));
+if (passwordLength > 128 || passwordLength < 8) {
+alert(`please choose a valid length`)
+i = false }
+else {
+  alert(`your chosen password length is ${passwordLength}`)
+  i = true
+} 
+}
+
+
+
+
+
+var lowercase
+
+var uppercase
+
+
+var numeric 
+
+specialCharacters
