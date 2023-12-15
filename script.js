@@ -120,7 +120,7 @@ generateBtn.addEventListener('click', writePassword);
 
 
 
-//for loop to recieved password length and will end once valid value recieved
+//for loop to recieved password length and will end once valid value recieved returns number value
 for (let i = false; i === false;) {
 var passwordLength = parseInt(prompt(`please specify length of password note: must be minimum of 8 but no more than 128 characters.`));
 if (passwordLength > 128 || passwordLength < 8) {
@@ -132,15 +132,41 @@ else {
 } 
 }
 
+//for loop to check for lowercase requirement returns true or false value
+
+//A function which input is character type being checked, returns a True or false value wheter that character type is required.
+
+function checkCharacterTypes (TypeCheck) {
+  for (let i = false; i === false;) {
+    var response = prompt(`please specify Yes or No if you require ${TypeCheck} contained within password note: not answer is not case sensitive`);
+    if (response.toLowerCase() !== "yes" || response.toLowerCase() !== "no") {
+    alert(`please specify a valid answer Yes or No `)
+    i = false }
+    else if (response.toLowerCase() === "yes") {
+      alert(`your response to if you want ${TypeCheck} in password is yes`)
+      response = true
+      i = true
+      return true
+    }
+    else {
+      alert(`your response to if you want ${TypeCheck} in password is no`)
+      response = false
+      i = true
+      return false
+    }
+  }
+  }
+      
+
+var lowercase = checkCharacterTypes("Lowercase")
+var uppercase = checkCharacterTypes("Uppercase")
+var Numeric = checkCharacterTypes("Numeric")
+var specialCharacters = checkCharacterTypes("Special Characters")
 
 
 
-
-var lowercase
-
-var uppercase
-
-
-var numeric 
-
-specialCharacters
+console.log (passwordLength)
+console.log (lowecase)
+console.log (uppercase)
+console.log (Numeric)
+console.log (specialCharacters)
