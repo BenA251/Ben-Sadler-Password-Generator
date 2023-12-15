@@ -118,7 +118,7 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 
-
+//ADDED CODE BELOW THIS POINT B.SADLER 
 
 //for loop to received password length and will end once valid value received returns number value
 for (let i = false; i === false;) {
@@ -168,6 +168,28 @@ console.log (Numeric)
 console.log (specCharacters)
 
 
+
+
+
+
+
+
 //need to put function within function to check at least one character has been selected.
+
+//add values in array and then do check array function to check presence of true if not the repeat password criteria selection with alert saying must select at least one characerter tygpe. (Use contains function)
+
+//else create object using criteria.
+//Object PasswordSelect
+
+//Characterlength 
+//lowercase: true
+///uppercase:
+//Numeric:
+//SpecialCharaceters: 
+
+
+
+
+
 
 //need to generate password using collected criteria.
