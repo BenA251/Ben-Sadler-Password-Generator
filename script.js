@@ -120,7 +120,7 @@ generateBtn.addEventListener('click', writePassword);
 
 
 
-//for loop to recieved password length and will end once valid value recieved returns number value
+//for loop to received password length and will end once valid value received returns number value
 for (let i = false; i === false;) {
 var passwordLength = parseInt(prompt(`please specify length of password note: must be minimum of 8 but no more than 128 characters.`));
 if (passwordLength > 128 || passwordLength < 8) {
@@ -134,23 +134,21 @@ else {
 
 //for loop to check for lowercase requirement returns true or false value
 
-//A function which input is character type being checked, returns a True or false value wheter that character type is required.
+//A function which input is character type being checked, returns a True or false value whether that character type is required.
 
 function checkCharacterTypes (TypeCheck) {
   for (let i = false; i === false;) {
-    var response = prompt(`please specify Yes or No if you require ${TypeCheck} contained within password note: not answer is not case sensitive`);
-    if (response.toLowerCase() !== "yes" || response.toLowerCase() !== "no") {
-    alert(`please specify a valid answer Yes or No `)
+    var response = prompt(`please specify Yes or No if you require ${TypeCheck} contained within password note: answer is not case sensitive`).toLowerCase();
+    if (response !== "yes" && response !== "no") {
+    alert(`please specify a valid answer either Yes or No `)
     i = false }
-    else if (response.toLowerCase() === "yes") {
-      alert(`your response to if you want ${TypeCheck} in password is yes`)
-      response = true
+    else if (response === "yes") {
+      alert(`your response to "do you want ${TypeCheck} in password" is yes`)
       i = true
       return true
     }
     else {
-      alert(`your response to if you want ${TypeCheck} in password is no`)
-      response = false
+      alert(`your response to "do you want ${TypeCheck} in password" is no`)
       i = true
       return false
     }
@@ -161,12 +159,15 @@ function checkCharacterTypes (TypeCheck) {
 var lowercase = checkCharacterTypes("Lowercase")
 var uppercase = checkCharacterTypes("Uppercase")
 var Numeric = checkCharacterTypes("Numeric")
-var specialCharacters = checkCharacterTypes("Special Characters")
-
-
+var specCharacters = checkCharacterTypes("Special Characters")
 
 console.log (passwordLength)
-console.log (lowecase)
+console.log (lowercase)
 console.log (uppercase)
 console.log (Numeric)
-console.log (specialCharacters)
+console.log (specCharacters)
+
+
+//need to put function within function to check at least one character has been selected.
+
+//need to generate password using collected criteria.
