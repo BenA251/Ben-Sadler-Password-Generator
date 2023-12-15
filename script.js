@@ -120,21 +120,30 @@ generateBtn.addEventListener('click', writePassword);
 
 //ADDED CODE BELOW THIS POINT B.SADLER 
 
-//for loop to received password length and will end once valid value received returns number value
-for (let i = false; i === false;) {
-var passwordLength = parseInt(prompt(`please specify length of password note: must be minimum of 8 but no more than 128 characters.`));
-if (passwordLength > 128 || passwordLength < 8) {
-alert(`please choose a valid length`)
-i = false }
-else {
-  alert(`your chosen password length is ${passwordLength}`)
-  i = true
-} 
-}
-
 //for loop to check for lowercase requirement returns true or false value
 
 //A function which input is character type being checked, returns a True or false value whether that character type is required.
+
+
+function checkCriteria () {
+  for (let i = false; i === false;) {
+    var lowercase = checkCharacterTypes("Lowercase")
+    var uppercase = checkCharacterTypes("Uppercase")
+    var Numeric = checkCharacterTypes("Numeric")
+    var specCharacters = checkCharacterTypes("Special Characters")
+  if (lowercase === false && uppercase === false &&  Numeric === false && specCharacters === false) {
+  alert(`you must specify at least one character type`)
+  i = false
+}
+else
+  {
+    return lowercase, uppercase, Numeric, specCharacters
+    i = true
+}
+return lowercase, uppercase, Numeric, specCharacters
+}
+return lowercase, uppercase, Numeric, specCharacters
+}
 
 function checkCharacterTypes (TypeCheck) {
   for (let i = false; i === false;) {
@@ -154,22 +163,23 @@ function checkCharacterTypes (TypeCheck) {
     }
   }
   }
-      
+  
 
-var lowercase = checkCharacterTypes("Lowercase")
-var uppercase = checkCharacterTypes("Uppercase")
-var Numeric = checkCharacterTypes("Numeric")
-var specCharacters = checkCharacterTypes("Special Characters")
+//for loop to received password length and will end once valid value received returns number value
+  for (let i = false; i === false;) {
+    var passwordLength = parseInt(prompt(`please specify length of password note: must be minimum of 8 but no more than 128 characters.`));
+    if (passwordLength > 128 || passwordLength < 8) {
+    alert(`please choose a valid length`)
+    i = false }
+    else {
+      alert(`your chosen password length is ${passwordLength}`)
+      i = true
+    } 
+    }
 
-console.log (passwordLength)
-console.log (lowercase)
-console.log (uppercase)
-console.log (Numeric)
-console.log (specCharacters)
 
 
-
-
+checkCriteria();
 
 
 
