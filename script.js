@@ -88,9 +88,54 @@ const upperCasedCharacters = [
   'Z'
 ];
 
+
+//A function which input is character type being checked, returns a True or false value whether that character type is required.
+
+function checkCharacterTypes (TypeCheck) {
+  for (let i = false; i === false;) {
+    var response = prompt(`please specify Yes or No if you require ${TypeCheck} contained within password note: answer is not case sensitive`).toLowerCase();
+    if (response !== "yes" && response !== "no") {
+    alert(`please specify a valid answer either Yes or No `)
+    i = false }
+    else if (response === "yes") {
+      alert(`your response to "do you want ${TypeCheck} in password" is yes`)
+      return true
+    }
+    else {
+      alert(`your response to "do you want ${TypeCheck} in password" is no`)
+      return false
+    }
+  }
+  }
+  
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  for (let i = false; i === false;) {
+    var passwordLength = parseInt(prompt(`please specify length of password note: must be minimum of 8 but no more than 128 characters.`));
+    if (passwordLength > 128 || passwordLength < 8) {
+    alert(`please choose a valid length`)
+    i = false }
+    else {
+      alert(`your chosen password length is ${passwordLength}`)
+      i = true
+    } 
+    }
+  
+  for (let i = false; i === false;) {
+      lowercase = checkCharacterTypes("lowercase")
+      uppercase = checkCharacterTypes("uppercase")
+      numeric = checkCharacterTypes("numeric")
+      specCharacters = checkCharacterTypes("specCharacters")
+  if (lowercase === false && uppercase === false &&  Numeric === false && specCharacters === false) {
+    alert(`you must specify at least one character type`)
+    i = false
+  }
+  else
+    {
+      i = true
+    }
+  }
+  return lowercase, uppercase, numeric, specCharacters
 }
 
 // Function for getting a random element from an array
@@ -118,33 +163,9 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 
-//ADDED CODE BELOW THIS POINT B.SADLER 
-
-//for loop to check for lowercase requirement returns true or false value
-
-//A function which input is character type being checked, returns a True or false value whether that character type is required.
 
 
-
-
-
-function checkCharacterTypes (TypeCheck) {
-  for (let i = false; i === false;) {
-    var response = prompt(`please specify Yes or No if you require ${TypeCheck} contained within password note: answer is not case sensitive`).toLowerCase();
-    if (response !== "yes" && response !== "no") {
-    alert(`please specify a valid answer either Yes or No `)
-    i = false }
-    else if (response === "yes") {
-      alert(`your response to "do you want ${TypeCheck} in password" is yes`)
-      return true
-    }
-    else {
-      alert(`your response to "do you want ${TypeCheck} in password" is no`)
-      return false
-    }
-  }
-  }
-  
+//declare variables
 
 var passwordLength = 0
 var lowercase = true
@@ -152,38 +173,19 @@ var uppercase = true
 var numeric = true
 var specCharacters = true
 
+//run functions
 
-for (let i = false; i === false;) {
-  var passwordLength = parseInt(prompt(`please specify length of password note: must be minimum of 8 but no more than 128 characters.`));
-  if (passwordLength > 128 || passwordLength < 8) {
-  alert(`please choose a valid length`)
-  i = false }
-  else {
-    alert(`your chosen password length is ${passwordLength}`)
-    i = true
-  } 
-  }
+getPasswordOptions();
 
-for (let i = false; i === false;) {
-    lowercase = checkCharacterTypes("lowercase")
-    uppercase = checkCharacterTypes("uppercase")
-    numeric = checkCharacterTypes("numeric")
-    specCharacters = checkCharacterTypes("specCharacters")
-if (lowercase === false && uppercase === false &&  Numeric === false && specCharacters === false) {
-  alert(`you must specify at least one character type`)
-  i = false
-}
-else
-  {
-    i = true
-  }
-}
 
-console.log (passwordLength)
-console.log (lowercase)
-console.log (uppercase)
-console.log (numeric)
-console.log (specCharacters)
+
+
+//testing (temp)
+console.log (passwordLength);
+console.log (lowercase);
+console.log (uppercase);
+console.log (numeric);
+console.log (specCharacters);
 
 
 
