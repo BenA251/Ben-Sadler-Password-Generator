@@ -180,12 +180,15 @@ if (lower && upper && num && spec) {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+const randomElement = arr[Math.floor(Math.random() *arr.length)];
 }
 
 // Function to generate password with user input
-function generatePassword(length, lower, upper, num, spec) {
-
+function generatePassword() {
+while (passwordArray.length < passwordLength) {
+  character = getRandom(bespokeArray);
+  passwordArray.push(character);
+}
 
 
 
@@ -210,6 +213,7 @@ generateBtn.addEventListener('click', writePassword);
 
 //declare variables 
 
+var character;
 var passwordLength;
 var lowercase;
 var uppercase;
@@ -217,13 +221,14 @@ var numeric;
 var specCharacters;
 var passwordCharSelect;
 var bespokeArray;
+var passwordArray = [];
 
 //run functions
 
 getPasswordOptions();
 generateArray(lowercase, uppercase, numeric, specCharacters);
-generatePassword(passwordLength, lowercase, uppercase, numeric, specCharacters);
-generateArray()
+generatePassword();
+
 
 
 
@@ -234,7 +239,7 @@ console.log (uppercase);
 console.log (numeric);
 console.log (specCharacters);
 console.log (bespokeArray);
-
+console.log (passwordArray);
 
 
 //need to put function within function to check at least one character has been selected.
