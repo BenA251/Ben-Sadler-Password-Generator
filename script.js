@@ -111,7 +111,7 @@ function checkCharacterTypes (TypeCheck) {
 // Function to prompt user for password options
 function getPasswordOptions() {
   for (let i = false; i === false;) {
-    var passwordLength = parseInt(prompt(`please specify length of password note: must be minimum of 8 but no more than 128 characters.`));
+    passwordLength = parseInt(prompt(`please specify length of password note: must be minimum of 8 but no more than 128 characters.`));
     if (passwordLength > 128 || passwordLength < 8) {
     alert(`please choose a valid length`)
     i = false }
@@ -126,7 +126,7 @@ function getPasswordOptions() {
       uppercase = checkCharacterTypes("uppercase")
       numeric = checkCharacterTypes("numeric")
       specCharacters = checkCharacterTypes("specCharacters")
-  if (lowercase === false && uppercase === false &&  Numeric === false && specCharacters === false) {
+  if (lowercase === false && uppercase === false &&  numeric === false && specCharacters === false) {
     alert(`you must specify at least one character type`)
     i = false
   }
@@ -135,7 +135,47 @@ function getPasswordOptions() {
       i = true
     }
   }
-  return lowercase, uppercase, numeric, specCharacters
+
+  return passwordLength, lowercase, uppercase, numeric, specCharacters;
+}
+
+
+
+//function for generating a array based off password criteria
+
+function generateArray(lower, upper, num, spec) {
+
+if (lower && upper && num && spec) {
+    bespokeArray = lowerCasedCharacters.concat(upperCasedCharacters, numericCharacters, specialCharacters);
+} else if (lower && upper && num && !spec) {
+    bespokeArray = lowerCasedCharacters.concat(upperCasedCharacters, numericCharacters);
+} else if (lower && upper && !num && !spec) {
+    bespokeArray = lowerCasedCharacters.concat(upperCasedCharacters);
+} else if (lower && !upper && !num && !spec) {
+    bespokeArray = lowerCasedCharacters;
+} else if (!lower && upper && !num && !spec) {
+    bespokeArray = upperCasedCharacters;
+} else if (!lower && !upper && num && !spec) {
+    bespokeArray = numericCharacters;
+} else if (!lower && !upper && !num && spec) {
+    bespokeArray = specialCharacters;
+} else if (lower && !upper && num && !spec) {
+    bespokeArray = lowerCasedCharacters.concat(numericCharacters);
+} else if (!lower && upper && !num && spec) {
+    bespokeArray = upperCasedCharacters.concat(specialCharacters);
+} else if (!lower && upper && num && spec) {
+    bespokeArray = upperCasedCharacters.concat(numericCharacters, specialCharacters);
+} else if (!lower && !upper && num && spec) {
+    bespokeArray = numericCharacters.concat(specialCharacters);
+} else if (lower && upper && !num && spec) {
+    bespokeArray = lowerCasedCharacters.concat(upperCasedCharacters, specialCharacters);
+} else if (lower && !upper && num && spec) {
+    bespokeArray = lowerCasedCharacters.concat(numericCharacters, specialCharacters);
+} else if (lower && !upper && !num && spec) {
+    bespokeArray = lowerCasedCharacters.concat(specialCharacters);
+} else if (!lower && upper && num && !spec) {
+    bespokeArray = upperCasedCharacters.concat(numericCharacters);
+} 
 }
 
 // Function for getting a random element from an array
@@ -144,7 +184,10 @@ function getRandom(arr) {
 }
 
 // Function to generate password with user input
-function generatePassword() {
+function generatePassword(length, lower, upper, num, spec) {
+
+
+
 
 }
 
@@ -165,18 +208,22 @@ generateBtn.addEventListener('click', writePassword);
 
 
 
-//declare variables
+//declare variables 
 
-var passwordLength = 0
-var lowercase = true
-var uppercase = true
-var numeric = true
-var specCharacters = true
+var passwordLength;
+var lowercase;
+var uppercase;
+var numeric;
+var specCharacters;
+var passwordCharSelect;
+var bespokeArray;
 
 //run functions
 
 getPasswordOptions();
-
+generateArray(lowercase, uppercase, numeric, specCharacters);
+generatePassword(passwordLength, lowercase, uppercase, numeric, specCharacters);
+generateArray()
 
 
 
@@ -186,9 +233,7 @@ console.log (lowercase);
 console.log (uppercase);
 console.log (numeric);
 console.log (specCharacters);
-
-
-
+console.log (bespokeArray);
 
 
 
