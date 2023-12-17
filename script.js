@@ -180,7 +180,8 @@ if (lower && upper && num && spec) {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-const randomElement = arr[Math.floor(Math.random() *arr.length)];
+randomElement = arr[Math.floor(Math.random() *arr.length)];
+return randomElement
 }
 
 // Function to generate password with user input
@@ -189,9 +190,8 @@ while (passwordArray.length < passwordLength) {
   character = getRandom(bespokeArray);
   passwordArray.push(character);
 }
-
-
-
+password = passwordArray.join("");
+return password
 }
 
 // Get references to the #generate element
@@ -222,14 +222,14 @@ var specCharacters;
 var passwordCharSelect;
 var bespokeArray;
 var passwordArray = [];
+var randomElement;
+var password;
 
 //run functions
 
 getPasswordOptions();
 generateArray(lowercase, uppercase, numeric, specCharacters);
 generatePassword();
-
-
 
 
 //testing (temp)
@@ -239,25 +239,6 @@ console.log (uppercase);
 console.log (numeric);
 console.log (specCharacters);
 console.log (bespokeArray);
-console.log (passwordArray);
+console.log (password);
 
 
-//need to put function within function to check at least one character has been selected.
-
-//add values in array and then do check array function to check presence of true if not the repeat password criteria selection with alert saying must select at least one characerter tygpe. (Use contains function)
-
-//else create object using criteria.
-//Object PasswordSelect
-
-//Characterlength 
-//lowercase: true
-///uppercase:
-//Numeric:
-//SpecialCharaceters: 
-
-
-
-
-
-
-//need to generate password using collected criteria.
