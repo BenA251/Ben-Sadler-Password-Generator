@@ -27,7 +27,11 @@ Website Repository: https://github.com/BenA251/Ben-Sadler-Password-Generator
 
 
 ## Usage 
+Upon opening the HTML the user is prompted to select a password length 8 < 128 followed by a prompt for each character type if they would like this included.
 
+User input is validate on all above prompts to ensure a valid length and minimum of one character type is selected from possible options.
+
+Following successful input the randomly generate password is created and displayed on screen once 'generate password' button is selected.
 
 
 
