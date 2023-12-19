@@ -232,7 +232,7 @@ generateArray(lowercase, uppercase, numeric, specCharacters);
 generatePassword();
 
 
-//testing (temp)
+/*testing (temp)
 console.log (passwordLength);
 console.log (lowercase);
 console.log (uppercase);
@@ -241,4 +241,4 @@ console.log (specCharacters);
 console.log (bespokeArray);
 console.log (password);
 
-
+*/
